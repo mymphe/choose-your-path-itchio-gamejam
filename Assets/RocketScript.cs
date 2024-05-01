@@ -33,7 +33,6 @@ public class RocketScript : MonoBehaviour
     private void UpdateDistance()
     {
         distanceTraveled += Time.deltaTime * currentSpeed;
-        Debug.Log(distanceTraveled);
     }
 
     private void Move()
@@ -42,7 +41,7 @@ public class RocketScript : MonoBehaviour
         {
             transform.position +=  Time.deltaTime * new Vector3(-strafeSpeed, 0f, 0f);
 
-            if (transform.position.x < leftHyperlaneThreshold)
+            if (transform.position.x < leftHyperlaneThreshold) 
             {
                 currentSpeed = leftHyperlaneSpeed;
             } 
@@ -85,4 +84,5 @@ public class RocketScript : MonoBehaviour
     {
         return distanceTraveled;
     }
+
 }
