@@ -38,15 +38,4 @@ public class HealthBar : MonoBehaviour
             Instantiate(emptyHeart, transform);
         }
     }
-
-    //void UpdateHealthBar()
-    //{
-    //    for (int i = 0; i < maxHealth; i++)
-    //    {
-    //        if (i < currentHealth)
-    //            healthIcons[i].enabled = true;
-    //        else
-    //            healthIcons[i].enabled = false;
-    //    }
-    //}
 }
