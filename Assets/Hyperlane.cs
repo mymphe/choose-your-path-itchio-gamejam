@@ -6,6 +6,7 @@ using UnityEngine;
 public class Hyperlane : MonoBehaviour
 {
     public static event EventHandler OnHyperlaneEntered;
+    public static event EventHandler OnHyperlaneExited;
 
     private bool rocketInside = false;
     private float timer;
@@ -27,6 +28,8 @@ public class Hyperlane : MonoBehaviour
         Debug.Log("Hyperlane:Exited!");
         timer = 0;
         rocketInside = false;
+
+        OnHyperlaneExited?.Invoke(this, EventArgs.Empty);
     }
 
     private void Update()
