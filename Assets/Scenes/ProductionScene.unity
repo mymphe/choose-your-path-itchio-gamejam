@@ -10917,6 +10917,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Speedometer
       objectReference: {fileID: 0}
+    - target: {fileID: 1262474630047095548, guid: 740e467c9b6c6dc4aa76dbadd828db72,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2851590434356690193, guid: 740e467c9b6c6dc4aa76dbadd828db72,
         type: 3}
       propertyPath: m_Pivot.x
