@@ -6,11 +6,9 @@ using UnityEngine;
 public class Speedometer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI speedText;
-    [SerializeField] private TextMeshProUGUI distanceText;
 
     private void Update()
     {
-        speedText.text = RocketScript.Instance.GetSpeed().ToString();
-        distanceText.text = Mathf.FloorToInt(RocketScript.Instance.GetDistance()).ToString() + " parsecs";
+        speedText.text = Rocket.Instance.GetSpeed().ToString();
     }
 }
