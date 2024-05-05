@@ -9,6 +9,6 @@ public class Speedometer : MonoBehaviour
 
     private void Update()
     {
-        speedText.text = Rocket.Instance.GetSpeed().ToString();
+        speedText.text = Rocket.Instance.GetSpeed().ToString("F1");
     }
 }

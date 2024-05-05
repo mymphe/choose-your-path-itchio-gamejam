@@ -9,15 +9,17 @@ public class Rocket: MonoBehaviour
 
     // CONSTANTS
     private const float DEFAULT_SPEED = 10f;
-    private const float ACCELERATION_RATE_PARSECS = 1;
-    private const float ACCELERATION_INTERVAL_SECONDS = 1f;
-    private const float STRAFE_RATE = 10f;
+    private const float MAX_SPEED = 100f;
+    private const float MAX_STRAFE_RATE = 10f;
+    private const float ACCELERATION_RATE_PARSECS = 0.1f;
+    private const float ACCELERATION_INTERVAL_SECONDS = 0.1f;
     private const float TURN_RATE = 10f;
 
     // dashboard
     private float currentSpeed;
     private float accelerationTimer = 1f;
     private float distanceTraveled = 0;
+    private float currentStrafeRate = 10f;
 
     private void Awake()
     {
@@ -86,13 +88,13 @@ public class Rocket: MonoBehaviour
 
     private void MoveLeft()
     {
-        transform.position += STRAFE_RATE * Time.deltaTime * new Vector3(-1f, 0f, 0f);
+        transform.position += currentStrafeRate * Time.deltaTime * new Vector3(-1f, 0f, 0f);
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, TURN_RATE), 0.1f);
     }
 
     private void MoveRight()
     {
-        transform.position += STRAFE_RATE * Time.deltaTime * new Vector3(1f, 0f, 0f);
+        transform.position += currentStrafeRate * Time.deltaTime * new Vector3(1f, 0f, 0f);
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, -TURN_RATE), 0.1f);
     }
 
@@ -110,12 +112,11 @@ public class Rocket: MonoBehaviour
     {
         accelerationTimer -= Time.deltaTime;
         
-        if (accelerationTimer <= 0)
+        if (accelerationTimer <= 0 && currentSpeed < MAX_SPEED)
         {
             accelerationTimer = ACCELERATION_INTERVAL_SECONDS;
             currentSpeed += ACCELERATION_RATE_PARSECS;
-
-            Debug.Log(currentSpeed);
+            currentStrafeRate = (MAX_SPEED - currentSpeed) / 10f;
         }
     }
 }
