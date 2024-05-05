@@ -634,7 +634,7 @@ Transform:
   m_GameObject: {fileID: 721276798}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: -0.5, z: -11}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16017,6 +16017,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ObstacleDestroyer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5224269507289977005, guid: 643d31e102dca9d4e9e62452ec3a6a2b,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5224269507289977005, guid: 643d31e102dca9d4e9e62452ec3a6a2b,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5330902984377974962, guid: 643d31e102dca9d4e9e62452ec3a6a2b,
         type: 3}

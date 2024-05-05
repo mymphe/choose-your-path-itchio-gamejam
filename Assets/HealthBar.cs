@@ -12,17 +12,22 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        UpdateHealthBar2();
+        UpdateHealthBar();
     }
 
     public void TakeDamage()
     {
         currentHealth -= 1;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        UpdateHealthBar2();
+        UpdateHealthBar();
+        
+        if (currentHealth == 0)
+        {
+            Debug.Log("Game Over");
+        }
     }
 
-    void UpdateHealthBar2()
+    void UpdateHealthBar()
     {
         for (var i = gameObject.transform.childCount - 1; i >= 0; i--)
         {

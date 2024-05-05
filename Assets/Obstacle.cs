@@ -1,18 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //[SerializeField] private GameObject explosionEffectPrefab; // Particle effect prefab for destruction
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.GetComponent<Rocket>() != null) // Check if the colliding object is the Rocket
+        {
+            // Instantiate explosion effect
+            //Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
+
+            // Notify HealthBar to take damage
+            HealthBar healthBar = FindObjectOfType<HealthBar>();
+            if (healthBar != null)
+            {
+                healthBar.TakeDamage();
+            }
+
+            Destroy(gameObject); 
+        }
     }
 }

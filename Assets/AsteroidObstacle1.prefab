@@ -94,7 +94,8 @@ GameObject:
   - component: {fileID: 6010261897502947329}
   - component: {fileID: 3108469481384401033}
   - component: {fileID: 3970964994013376269}
-  - component: {fileID: 5493607931153610064}
+  - component: {fileID: -829881189372064596}
+  - component: {fileID: 7329319777825037681}
   m_Layer: 7
   m_Name: AsteroidObstacle1
   m_TagString: Enemy
@@ -158,8 +159,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tumble: 0.25
---- !u!135 &5493607931153610064
-SphereCollider:
+--- !u!114 &-829881189372064596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8293632316488444672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d84cf56410fbd41a290ed548da7b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &7329319777825037681
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -173,9 +186,11 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.4
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.86387587
+  m_Height: 1.6
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0.057197094}
